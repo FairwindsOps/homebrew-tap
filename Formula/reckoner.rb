@@ -6,6 +6,7 @@ class Reckoner < Formula
   sha256 "8651efdaf4ebd879e7ef647c6549c1f3bf908632ce0b26bb5ce3dd66e285b9ae"
 
   def install
+    mv "reckoner-darwin", "reckoner"
     bin.install "reckoner"
   end
 
