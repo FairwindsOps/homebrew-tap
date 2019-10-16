@@ -1,9 +1,9 @@
 class RbacLookup < Formula
   desc "Reverse Lookup for Kubernetes RBAC"
   homepage ""
-  url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.4.2/rbac-lookup_0.4.2_Darwin_x86_64.tar.gz"
-  version "0.4.2"
-  sha256 "5e90223e9a786d30fb7fb70f967233cfa08f5a212b95a5528a4774e0094bddbd"
+  url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.5.0/rbac-lookup_0.5.0_Darwin_x86_64.tar.gz"
+  version "0.5.0"
+  sha256 "6314e2e429911ad22d72d788086e2c92f83654277830f3be944c8c5437debf24"
 
   def install
     bin.install "rbac-lookup"
