@@ -1,9 +1,9 @@
 class Polaris < Formula
   desc "Open Source Best Practices for Kubernetes"
   homepage ""
-  url "https://github.com/FairwindsOps/polaris/releases/download/0.5.2/polaris_0.5.2_Darwin_x86_64.tar.gz"
-  version "0.5.2"
-  sha256 "9e244fdc3a6cd46877f65054d7a78d4cf44e4341a00c370411c26e31b73253dd"
+  url "https://github.com/FairwindsOps/polaris/releases/download/0.6.0/polaris_0.6.0_Darwin_x86_64.tar.gz"
+  version "0.6.0"
+  sha256 "cd153b3d0eee70ebb73f898f6d39b1e3689669d2db4e1f79b705e1575c5ecf12"
 
   def install
     bin.install "polaris"
