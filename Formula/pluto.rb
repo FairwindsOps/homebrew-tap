@@ -2,16 +2,16 @@
 class Pluto < Formula
   desc "Detect deprecated Kubernetes apiVersions"
   homepage ""
-  version "3.3.0"
+  version "3.4.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/FairwindsOps/pluto/releases/download/v3.3.0/pluto_3.3.0_darwin_amd64.tar.gz"
-    sha256 "71a962048bbde7c95af9ccb6f25507c7f90d538fe440d6e54f9403e764fc7d34"
+    url "https://github.com/FairwindsOps/pluto/releases/download/v3.4.0/pluto_3.4.0_darwin_amd64.tar.gz"
+    sha256 "6c9b8976c779d041e6feb353d05654b5b8c93ff94a6276948546eceace9becab"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/pluto/releases/download/v3.3.0/pluto_3.3.0_linux_amd64.tar.gz"
-      sha256 "036a92ce24620e704f8f809087b6c9f25ac2789f419396a8a16151915e9f848e"
+      url "https://github.com/FairwindsOps/pluto/releases/download/v3.4.0/pluto_3.4.0_linux_amd64.tar.gz"
+      sha256 "0870088efd8b6ed7d25c01e0ce5bb912f6d66bd10266d6de49c9e7c186a30dc6"
     end
   end
 
