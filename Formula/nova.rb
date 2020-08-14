@@ -2,24 +2,24 @@
 class Nova < Formula
   desc "Check installed Helm charts for updates"
   homepage ""
-  version "1.0.1"
+  version "1.0.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/FairwindsOps/Nova/releases/download/1.0.1/Nova_1.0.1_darwin_amd64.tar.gz"
-    sha256 "76cc8d89b64fd12d40549ce75a6e6bafe8abd22544e73538d38f82e12688fb0f"
+    url "https://github.com/FairwindsOps/Nova/releases/download/1.0.2/Nova_1.0.2_darwin_amd64.tar.gz"
+    sha256 "64abcdd3394397bcbf91d8e27e9d51ab808c8de914bc550ea840f5e82541b514"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/Nova/releases/download/1.0.1/Nova_1.0.1_linux_amd64.tar.gz"
-      sha256 "a001e113eda702774a79e16beea9cc13e1cf4305392bba3de1c0c8a798a6e850"
+      url "https://github.com/FairwindsOps/Nova/releases/download/1.0.2/Nova_1.0.2_linux_amd64.tar.gz"
+      sha256 "86900ab04ea3f1a66d166bba9df09fc1f1356b7ea269ceb2f4c0c9e1c64b47b5"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/FairwindsOps/Nova/releases/download/1.0.1/Nova_1.0.1_linux_arm64.tar.gz"
-        sha256 "eec586b713b7cc868ebc76273d8fc7a5c579d653de07fa37669e559104815344"
+        url "https://github.com/FairwindsOps/Nova/releases/download/1.0.2/Nova_1.0.2_linux_arm64.tar.gz"
+        sha256 "5b521fea9bafd372c0177b45f170719790435d52354442768c38a0708998f285"
       else
-        url "https://github.com/FairwindsOps/Nova/releases/download/1.0.1/Nova_1.0.1_linux_armv6.tar.gz"
-        sha256 "39e7213404a5e60cb9949a1325372e77a07baf3dea73d5ebdee08395f62fb235"
+        url "https://github.com/FairwindsOps/Nova/releases/download/1.0.2/Nova_1.0.2_linux_armv6.tar.gz"
+        sha256 "da65d2a49f9d9daef4dd41a78335bf744d92d6c1c5601b537efe28c058bdb2d2"
       end
     end
   end
