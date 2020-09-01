@@ -7,11 +7,11 @@ class Pluto < Formula
 
   if OS.mac?
     url "https://github.com/FairwindsOps/pluto/releases/download/v3.4.1/pluto_3.4.1_darwin_amd64.tar.gz"
-    sha256 "1417ba8cd502431a5950207be8b59b925cf407d9e9b5dd7e0aed7fd7664f0dd1"
+    sha256 "7205152ba2e74e3a92abef71e9c7c8d8f866c7645000cf75f9c5bcf789193774"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/FairwindsOps/pluto/releases/download/v3.4.1/pluto_3.4.1_linux_amd64.tar.gz"
-      sha256 "e6172e27ea954fdc7df75d076d496d987816bd9f180cd7829887a17de056466f"
+      sha256 "aa42314c78f2ad6352266821c5927a548dc0811074ee889b4fcd47085e011a60"
     end
   end
 
