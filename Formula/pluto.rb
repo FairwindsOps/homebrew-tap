@@ -2,24 +2,24 @@
 class Pluto < Formula
   desc "Detect deprecated Kubernetes apiVersions"
   homepage ""
-  version "3.5.4"
+  version "4.0.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/FairwindsOps/pluto/releases/download/v3.5.4/pluto_3.5.4_darwin_amd64.tar.gz"
-    sha256 "f20330b0182084d8c366cf62943887775021ef3d863cc762f30f019f706daa62"
+    url "https://github.com/FairwindsOps/pluto/releases/download/v4.0.0/pluto_4.0.0_darwin_amd64.tar.gz"
+    sha256 "32275c13d1ee968c959cbf7a5096ca5d751cd2457a6a305ade3fa794da5f49b9"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/pluto/releases/download/v3.5.4/pluto_3.5.4_linux_amd64.tar.gz"
-      sha256 "1689d47e1d47a3cf3ed8e6c413593a12827f90ce92b311150047d93902521ce2"
+      url "https://github.com/FairwindsOps/pluto/releases/download/v4.0.0/pluto_4.0.0_linux_amd64.tar.gz"
+      sha256 "fc4e828a5cf6cd1cb062d7f739b4bae172f32834cc71547f568e37233b1a29a3"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/FairwindsOps/pluto/releases/download/v3.5.4/pluto_3.5.4_linux_arm64.tar.gz"
-        sha256 "d6782f95fcf0598729e15e8b90a9317a9cb033125ad26544cd1bf4b415fc5396"
+        url "https://github.com/FairwindsOps/pluto/releases/download/v4.0.0/pluto_4.0.0_linux_arm64.tar.gz"
+        sha256 "9b6404a98b28158f1d6ddbcd694228c96c44435c7fcc056ddc6afeb248f891ee"
       else
-        url "https://github.com/FairwindsOps/pluto/releases/download/v3.5.4/pluto_3.5.4_linux_armv6.tar.gz"
-        sha256 "c4d368cadb2404f877435060683ec135859a6d1b788b73c30f70772886c6eaac"
+        url "https://github.com/FairwindsOps/pluto/releases/download/v4.0.0/pluto_4.0.0_linux_armv6.tar.gz"
+        sha256 "b6308496bf74e4872ab2ea9aae98388c296e7f10f6dcdd8736351f537429aee6"
       end
     end
   end
