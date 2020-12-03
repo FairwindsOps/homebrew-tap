@@ -2,30 +2,28 @@
 class Nova < Formula
   desc "Check installed Helm charts for updates"
   homepage ""
-  version "2.0.1"
+  version "2.0.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/FairwindsOps/Nova/releases/download/2.0.1/Nova_2.0.1_darwin_amd64.tar.gz"
-    sha256 "4e7fdaaa7dcdc6954cf563a62eec70c3cf7b7087c4ae2b2bc3160851eabf12db"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/Nova/releases/download/2.0.1/Nova_2.0.1_linux_amd64.tar.gz"
-      sha256 "e9d811016ae3796e27de246ba60ee5f840fc19429be0a561b7e51a20f5a9a095"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/FairwindsOps/Nova/releases/download/2.0.1/Nova_2.0.1_linux_arm64.tar.gz"
-        sha256 "5a169e02212a84d9a099538db94d39ddd62b948873b12f2c1eeafe34764e612e"
-      else
-        url "https://github.com/FairwindsOps/Nova/releases/download/2.0.1/Nova_2.0.1_linux_armv6.tar.gz"
-        sha256 "96cf0222eae3e69c7bc2eed82563e3abf2b3601ac027edf5f1f6bb702b4d03c9"
-      end
-    end
+    url "https://github.com/FairwindsOps/nova/releases/download/2.0.2/nova_2.0.2_darwin_amd64.tar.gz"
+    sha256 "f71eac44cd26fdb70ac800a0a5194d3767dc442a63626ebe8f6e3b7aba9e958d"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/FairwindsOps/nova/releases/download/2.0.2/nova_2.0.2_linux_amd64.tar.gz"
+    sha256 "ff00a91484bf703274ddb027679ec61bc6f1b3aa55b23537eca03db3ed6c7ab7"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/FairwindsOps/nova/releases/download/2.0.2/nova_2.0.2_linux_armv6.tar.gz"
+    sha256 "bc7658d36939b185152b7aedfe80d5001b41b65fac1a71946fba8acabf7bb0c9"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/FairwindsOps/nova/releases/download/2.0.2/nova_2.0.2_linux_arm64.tar.gz"
+    sha256 "d40366c3f6287ae5b31050c2cf8b1b14dcbd753c0ea5e43d8d7b9231146fc1dc"
   end
 
   def install
-    bin.install "Nova"
+    bin.install "nova"
   end
 
   test do
