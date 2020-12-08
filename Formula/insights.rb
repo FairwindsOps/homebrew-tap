@@ -2,26 +2,24 @@
 class Insights < Formula
   desc "Command Line utility for Fairwinds Insights"
   homepage ""
-  version "0.1.0"
+  version "0.2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/FairwindsOps/insights-cli/releases/download/v0.1.0/insights-cli_0.1.0_darwin_amd64.tar.gz"
-    sha256 "1e1037272b9d9bc39f159c2d5ccf8eaf8e5eeea36c917122efb5c869ec9f4752"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/insights-cli/releases/download/v0.1.0/insights-cli_0.1.0_linux_amd64.tar.gz"
-      sha256 "1f42791be3137a1b2872f8c5d6e486db3a60ba0bdee31ba187a83d8e61710045"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/FairwindsOps/insights-cli/releases/download/v0.1.0/insights-cli_0.1.0_linux_arm64.tar.gz"
-        sha256 "fa9d1524ab2287213efe6d03b5cfc40fd3d29865a8ea299277c965f080bc0920"
-      else
-        url "https://github.com/FairwindsOps/insights-cli/releases/download/v0.1.0/insights-cli_0.1.0_linux_armv6.tar.gz"
-        sha256 "877ffdfab95ea3c7fbcc802d8331f5bdb40743157015e002f7a8a46611549497"
-      end
-    end
+    url "https://github.com/FairwindsOps/insights-cli/releases/download/v0.2.0/insights-cli_0.2.0_darwin_amd64.tar.gz"
+    sha256 "c6c64444bde02e769cb37b8970a4d9ee6f2245c8401465ac94c7281ddf0e997f"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/FairwindsOps/insights-cli/releases/download/v0.2.0/insights-cli_0.2.0_linux_amd64.tar.gz"
+    sha256 "84db39afa7acd3342c82edf51feb6c096af1513e31c04b6d513af9d5579fee98"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/FairwindsOps/insights-cli/releases/download/v0.2.0/insights-cli_0.2.0_linux_armv6.tar.gz"
+    sha256 "42259dcfa749916cfba2393fc1dd378ae180bc6364df3694d2bd164f97fde2ce"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/FairwindsOps/insights-cli/releases/download/v0.2.0/insights-cli_0.2.0_linux_arm64.tar.gz"
+    sha256 "2f2bbcef5de782dff35f5e416a01aeec7a6de5aed52e775cb8c327821af8f69c"
   end
 
   def install
