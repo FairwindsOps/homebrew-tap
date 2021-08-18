@@ -2,24 +2,24 @@
 class Polaris < Formula
   desc "Open Source Best Practices for Kubernetes"
   homepage ""
-  version "4.0.7"
+  version "4.0.8"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/FairwindsOps/polaris/releases/download/4.0.7/polaris_darwin_amd64.tar.gz"
-    sha256 "23ce511c3529e653025b94e7b9009a6216f213e7736b4c1bcce29f06d3e8b41c"
+    url "https://github.com/FairwindsOps/polaris/releases/download/4.0.8/polaris_darwin_amd64.tar.gz"
+    sha256 "da82228c95fd56e389d95bead197c73ac42f0c5484f8618dc3ee3def056f136d"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/polaris/releases/download/4.0.7/polaris_linux_amd64.tar.gz"
-      sha256 "0e9f02436f2c6371a141e8e3d871add7e43ce134a1eeec27084492d345c70bd3"
+      url "https://github.com/FairwindsOps/polaris/releases/download/4.0.8/polaris_linux_amd64.tar.gz"
+      sha256 "1c155bdacb9b250340286beab4e4c0f64d079d90b4556bc3354451714c344657"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/FairwindsOps/polaris/releases/download/4.0.7/polaris_linux_arm64.tar.gz"
-        sha256 "3f7ae18c43b6859873bbed3fbed401f2c23fdc38e7b342f668cfc75227289071"
+        url "https://github.com/FairwindsOps/polaris/releases/download/4.0.8/polaris_linux_arm64.tar.gz"
+        sha256 "d5a48d9542615fb7d54d855c720766fd45341b4d693cb4151614d08495d8ba11"
       else
-        url "https://github.com/FairwindsOps/polaris/releases/download/4.0.7/polaris_linux_armv6.tar.gz"
-        sha256 "b94598f180f19143f775b8e27d6c9e9a070e4c5325f3a9b4de0ec23091ba8b4d"
+        url "https://github.com/FairwindsOps/polaris/releases/download/4.0.8/polaris_linux_armv6.tar.gz"
+        sha256 "4f7bb637f1cb646040ffe72b1f4b85ebd82f07d6624974943fb4811ee017683d"
       end
     end
   end
