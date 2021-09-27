@@ -5,25 +5,34 @@
 class HomebrewTap < Formula
   desc "Reverse Lookup for Kubernetes RBAC"
   homepage "https://github.com/FairWindsOps/rbac-lookup"
-  version "0.6.5"
+  version "0.7.0"
   license "apache-2.0"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.5/rbac-lookup_0.6.5_Darwin_x86_64.tar.gz"
-    sha256 "6b86428684c793dd43fc5470a792ac27f0cc943177bd8b4ee59fdcd7f33883d9"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.7.0/rbac-lookup_0.7.0_Darwin_x86_64.tar.gz"
+      sha256 "e1f8b3de798d993d2b5d2aaf563f02f4ff823ffdb08365be73985359645b8fa6"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.7.0/rbac-lookup_0.7.0_Darwin_arm64.tar.gz"
+      sha256 "2d839a0422cc13010fb79ba6b97b4efe8829b5da8f8eb3800f8d77d1f1eac968"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.5/rbac-lookup_0.6.5_Linux_x86_64.tar.gz"
-    sha256 "fcedd377d09dc0553f422699035ec862789a69fb0c186c67a5a1bf541a9bd6ce"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.5/rbac-lookup_0.6.5_Linux_armv6.tar.gz"
-    sha256 "62bcc45b7dd9345f841c14c8f5c03ae686d7061858f12ba1bea99cbecdc2a0a8"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.5/rbac-lookup_0.6.5_Linux_arm64.tar.gz"
-    sha256 "9655c28370451aa203a16038e75baec27e238c3bf96ae9d1d1d6d20ac4ae3296"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.7.0/rbac-lookup_0.7.0_Linux_x86_64.tar.gz"
+      sha256 "144e9d0d36d2eaed3a6870cbc91ba2ea6eb5e6c78a81fc00de76a71118fd444a"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.7.0/rbac-lookup_0.7.0_Linux_armv6.tar.gz"
+      sha256 "faa3eaf0ca36efb4d83cec116d63b83abcf68f393628a2989086dc2a14525606"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.7.0/rbac-lookup_0.7.0_Linux_arm64.tar.gz"
+      sha256 "42a93572bed0207bec016bcbd6dc0eaaabc93efbdbd79f98f76e1b4cd61c6c06"
+    end
   end
 
   def install
