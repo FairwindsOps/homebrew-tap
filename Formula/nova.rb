@@ -5,28 +5,32 @@
 class Nova < Formula
   desc "Check installed Helm charts for updates"
   homepage ""
-  version "2.3.2"
+  version "2.3.3"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.2/nova_2.3.2_darwin_amd64.tar.gz"
-      sha256 "c3a2e47aa30b26bcd00b6f29fee177b8f25ebe28ff90963f47b18e2c00453e6f"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_darwin_amd64.tar.gz"
+      sha256 "bb6ea74e39d24461e0317747be0b7d401dec5e0164a75b51c871c5e8bf38b349"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_darwin_arm64.tar.gz"
+      sha256 "7ae3ffd008d319bb9661063af6cfaa298db970c7110d4e2e3beb41c4a75dbae0"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.2/nova_2.3.2_linux_amd64.tar.gz"
-      sha256 "8ebbe0ffcf541abd76ee2c46538112b9b9e24612cb7fe5b987e049fadd6c1f9b"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_linux_amd64.tar.gz"
+      sha256 "dcbd8f0571849964dbc563188b276de07ccb77e80c0d1029f46a5ad8a75a07b6"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.2/nova_2.3.2_linux_armv6.tar.gz"
-      sha256 "7036c45440e9b089866f30d42130d4c5e78b26270700aaa158e2496ca7796d68"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_linux_armv6.tar.gz"
+      sha256 "5ce02dbcf5a95e26b7e5c9166aed48d53c006c7414cb13ba0e440ab8ff4dcd90"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.2/nova_2.3.2_linux_arm64.tar.gz"
-      sha256 "4b1cec4b2f8aa9a213acbec3a1dfc51ec99a91b7450f60204ad890337c043b5c"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_linux_arm64.tar.gz"
+      sha256 "58069c445cae65113511f6cfe6aa066e5e190e930c07fc305ca71876f52f1328"
     end
   end
 
