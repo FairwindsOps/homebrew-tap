@@ -5,21 +5,25 @@
 class HomebrewTap < Formula
   desc "Reverse Lookup for Kubernetes RBAC"
   homepage "https://github.com/FairWindsOps/rbac-lookup"
-  version "0.6.4"
+  version "0.6.5"
   license "apache-2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.4/rbac-lookup_0.6.4_Darwin_x86_64.tar.gz"
-    sha256 "7d914297d9ceede8f07d196d56de788ede081e844c17b435ea04092541c15b1e"
+    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.5/rbac-lookup_0.6.5_Darwin_x86_64.tar.gz"
+    sha256 "6b86428684c793dd43fc5470a792ac27f0cc943177bd8b4ee59fdcd7f33883d9"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.4/rbac-lookup_0.6.4_Linux_x86_64.tar.gz"
-    sha256 "9f6f63b2ee6f5420530b6aa589b4c8c4a4685bf87447286881d37afdd80a7fb2"
+    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.5/rbac-lookup_0.6.5_Linux_x86_64.tar.gz"
+    sha256 "fcedd377d09dc0553f422699035ec862789a69fb0c186c67a5a1bf541a9bd6ce"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.5/rbac-lookup_0.6.5_Linux_armv6.tar.gz"
+    sha256 "62bcc45b7dd9345f841c14c8f5c03ae686d7061858f12ba1bea99cbecdc2a0a8"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.4/rbac-lookup_0.6.4_Linux_arm64.tar.gz"
-    sha256 "df85119b39a22aee0d9472d5c48210943329cbd3f878aec159fa1b5ccd6818a1"
+    url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.6.5/rbac-lookup_0.6.5_Linux_arm64.tar.gz"
+    sha256 "9655c28370451aa203a16038e75baec27e238c3bf96ae9d1d1d6d20ac4ae3296"
   end
 
   def install
