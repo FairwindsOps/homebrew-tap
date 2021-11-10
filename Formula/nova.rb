@@ -5,32 +5,32 @@
 class Nova < Formula
   desc "Check installed Helm charts for updates"
   homepage ""
-  version "2.3.3"
+  version "2.3.4"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_darwin_amd64.tar.gz"
-      sha256 "bb6ea74e39d24461e0317747be0b7d401dec5e0164a75b51c871c5e8bf38b349"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.4/nova_2.3.4_darwin_amd64.tar.gz"
+      sha256 "4d10c1b736a6feb93c9d9a0378489e6cf2f963df1e8ab07b0c038ddcbe05ccd5"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_darwin_arm64.tar.gz"
-      sha256 "7ae3ffd008d319bb9661063af6cfaa298db970c7110d4e2e3beb41c4a75dbae0"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.4/nova_2.3.4_darwin_arm64.tar.gz"
+      sha256 "e4314533ed6f6f75725a4da8067b1291cf3a30a00e9e9bb791f15411387df050"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_linux_amd64.tar.gz"
-      sha256 "dcbd8f0571849964dbc563188b276de07ccb77e80c0d1029f46a5ad8a75a07b6"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.4/nova_2.3.4_linux_amd64.tar.gz"
+      sha256 "c005076bc30481797920678c9a3dcdac134772b4bc9c36a366ade52577c1d72d"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_linux_armv6.tar.gz"
-      sha256 "5ce02dbcf5a95e26b7e5c9166aed48d53c006c7414cb13ba0e440ab8ff4dcd90"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.4/nova_2.3.4_linux_armv6.tar.gz"
+      sha256 "e0fd4940505775472133cd0518f9ed23f8a785cf95cef80115c448248674715a"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/nova/releases/download/2.3.3/nova_2.3.3_linux_arm64.tar.gz"
-      sha256 "58069c445cae65113511f6cfe6aa066e5e190e930c07fc305ca71876f52f1328"
+      url "https://github.com/FairwindsOps/nova/releases/download/2.3.4/nova_2.3.4_linux_arm64.tar.gz"
+      sha256 "4b991ea42831097a4595b6f411bab4cda291fde79d5196ea5f9fafb017b47f0d"
     end
   end
 
