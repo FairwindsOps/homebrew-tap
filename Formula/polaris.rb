@@ -5,32 +5,32 @@
 class Polaris < Formula
   desc "Open Source Best Practices for Kubernetes"
   homepage ""
-  version "4.2.0"
+  version "5.0.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/polaris/releases/download/4.2.0/polaris_darwin_amd64.tar.gz"
-      sha256 "a9a6527516a1e7dc4e6afa21b12791b50438e31d6af085cb19bce98f29bc1a90"
+      url "https://github.com/FairwindsOps/polaris/releases/download/5.0.0/polaris_darwin_amd64.tar.gz"
+      sha256 "15c55369254a21ea0d949001bb36e84cda4e6e470c10a69d3de6379923d05615"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/polaris/releases/download/4.2.0/polaris_darwin_arm64.tar.gz"
-      sha256 "d5aea100275a7c179f55c5806a7a6b7772cf355f9aa9782e9a40833c27cf865c"
+      url "https://github.com/FairwindsOps/polaris/releases/download/5.0.0/polaris_darwin_arm64.tar.gz"
+      sha256 "69866c38d524029b7ad4a9e3cfcb259cae6adfc9f1d0bd6adfdd7bcbfe1ab58c"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/polaris/releases/download/4.2.0/polaris_linux_amd64.tar.gz"
-      sha256 "2b5d99c324ccd2cd89a3ebf6b83c2c7570eb0415f77403362ba9fee16af05a32"
+      url "https://github.com/FairwindsOps/polaris/releases/download/5.0.0/polaris_linux_amd64.tar.gz"
+      sha256 "13745790e63c2a51371449184a620aed3a09ddde9753c6923b79c054829b5911"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/polaris/releases/download/4.2.0/polaris_linux_armv6.tar.gz"
-      sha256 "d909508642456a21f35d0321d98130cf672b35e155630e425235b75f42ff687b"
+      url "https://github.com/FairwindsOps/polaris/releases/download/5.0.0/polaris_linux_armv6.tar.gz"
+      sha256 "51f02bdab9cb4a043ceaff3da36a73b515bb8b460b6dbce82609e9b96c257e06"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/polaris/releases/download/4.2.0/polaris_linux_arm64.tar.gz"
-      sha256 "756b9bd9c6bd53826cd45e39f661cf3b54722ab13b1b3cf17b79c222baaad24a"
+      url "https://github.com/FairwindsOps/polaris/releases/download/5.0.0/polaris_linux_arm64.tar.gz"
+      sha256 "35b6d5f48fdcd263ee71d6bfdfb30f25a7b20b5d1274d1a63632752e59b4c88a"
     end
   end
 
