@@ -5,20 +5,20 @@
 class Pluto < Formula
   desc "Detect deprecated Kubernetes apiVersions"
   homepage ""
-  version "5.5.1"
+  version "5.5.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.1/pluto_5.5.1_darwin_arm64.tar.gz"
-      sha256 "25abd1c2e4e91ad547a8788ad8c837afb25263e6aeee8de1260a9cad6fabc2fe"
+      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.2/pluto_5.5.2_darwin_arm64.tar.gz"
+      sha256 "1080c1ee4257c07c51b4e6246ee2b029f91f4026fc7cced407d81d467660a78b"
 
       def install
         bin.install "pluto"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.1/pluto_5.5.1_darwin_amd64.tar.gz"
-      sha256 "1b26e88ec7b1c1509e68f88084d165d576e53dd044b1e247903b9ba40a236153"
+      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.2/pluto_5.5.2_darwin_amd64.tar.gz"
+      sha256 "4176b3beefb25b5623cd3505c7d53665215d39fcb6f12ba3d37a4a69fe8f3434"
 
       def install
         bin.install "pluto"
@@ -28,24 +28,24 @@ class Pluto < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.1/pluto_5.5.1_linux_armv6.tar.gz"
-      sha256 "8f1f007532261aba75f3c02ecdffddab42cbca8e0ed1ba485b0b5744e66775e1"
+      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.2/pluto_5.5.2_linux_armv6.tar.gz"
+      sha256 "019e5965469447e39b0d2cfcebeb4f329cbe772917611ea74b0610088671bf62"
 
       def install
         bin.install "pluto"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.1/pluto_5.5.1_linux_arm64.tar.gz"
-      sha256 "085b74abe6d0ec59f8076f09f6c26c8de419f68958a23b4bce8a7bc491b7414b"
+      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.2/pluto_5.5.2_linux_arm64.tar.gz"
+      sha256 "5658c4b3c49b94f5785e7edeefed97888b1055a8884a49ce1dbdaecb4ade8581"
 
       def install
         bin.install "pluto"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.1/pluto_5.5.1_linux_amd64.tar.gz"
-      sha256 "d8001f3e8a33557279450759a247f5054ad8ab18dfb84e16c758965aeaa958dd"
+      url "https://github.com/FairwindsOps/pluto/releases/download/v5.5.2/pluto_5.5.2_linux_amd64.tar.gz"
+      sha256 "5d95d89d914dbfd7bd30e50c34d27206f3298d509124601fd4e204ec08dd6c7a"
 
       def install
         bin.install "pluto"
