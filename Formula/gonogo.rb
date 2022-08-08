@@ -10,7 +10,7 @@ class Gonogo < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.2/gonogo_0.2.2_darwin_arm64.tar.gz"
-      sha256 "3c64e093ee8b7929bb7017c3d4c6fc586f5c8727f4674c94a7e8dc52b4247a8c"
+      sha256 "9da2a4a7ac3b09d7ceca053063abba8d2fdb19128be8071c203ec8be832656c8"
 
       def install
         bin.install "gonogo"
@@ -18,7 +18,7 @@ class Gonogo < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.2/gonogo_0.2.2_darwin_amd64.tar.gz"
-      sha256 "55070783ee7e014a16b9bdd8219b6fb57f922424cd9a9cb9d6439bbdb685b14a"
+      sha256 "c0e3e43e5e9ae8d4eacd1b24a3dce8c88417f8f8c5282e206cd6440ee73a9a4e"
 
       def install
         bin.install "gonogo"
@@ -29,7 +29,7 @@ class Gonogo < Formula
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.2/gonogo_0.2.2_linux_armv6.tar.gz"
-      sha256 "1653c93f4b5052ee6b75cc8e11ce0c780d9f684a389fbcb0104af912d1de571c"
+      sha256 "1e08506b5abfccc2e23143129a2ed11f7aab3cf96428fb1dd090c16d88055c2d"
 
       def install
         bin.install "gonogo"
@@ -37,7 +37,7 @@ class Gonogo < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.2/gonogo_0.2.2_linux_arm64.tar.gz"
-      sha256 "2c2f6793df48cb2ef27c1a53524ecaa39bf144f39da3a04775bee864a0538a0b"
+      sha256 "6242e13099f9841b99637857ea465c90e513021a008677e34fdc080060e12300"
 
       def install
         bin.install "gonogo"
@@ -45,7 +45,7 @@ class Gonogo < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.2/gonogo_0.2.2_linux_amd64.tar.gz"
-      sha256 "f34451287d8d3b5fcecff7c276c8189df0f334d33b0848839fc6edb4666c77fa"
+      sha256 "13cce09b06ec347dddd0e38551895bfe3587eef9af5d64ac13ca31775cfea7f7"
 
       def install
         bin.install "gonogo"
