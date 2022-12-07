@@ -5,21 +5,21 @@
 class RbacLookup < Formula
   desc "Reverse Lookup for Kubernetes RBAC"
   homepage "https://github.com/FairWindsOps/rbac-lookup"
-  version "0.9.1"
+  version "0.10.0"
   license "apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.9.1/rbac-lookup_0.9.1_Darwin_arm64.tar.gz"
-      sha256 "28bcc1fbc159b977614fafd8c52d8774d511f52cf6b9888f5702c95f6b5b5569"
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.10.0/rbac-lookup_0.10.0_Darwin_arm64.tar.gz"
+      sha256 "d8df7c4862ceb97ac2ced71cd2229b6e626bb6922be7e4a5d99aa2477ef9f4d5"
 
       def install
         bin.install "rbac-lookup"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.9.1/rbac-lookup_0.9.1_Darwin_x86_64.tar.gz"
-      sha256 "d2f9c6ad0b34a7ac6386a45bd31d67a6bc6b087c6818b939d3357d80780ea37e"
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.10.0/rbac-lookup_0.10.0_Darwin_x86_64.tar.gz"
+      sha256 "e63af3cc07e8ba4ac3808f0202f9a89dd07278ed0cff3f55d8840d97ea4ed234"
 
       def install
         bin.install "rbac-lookup"
@@ -29,24 +29,24 @@ class RbacLookup < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.9.1/rbac-lookup_0.9.1_Linux_armv6.tar.gz"
-      sha256 "2b081cd3a9b0b90704f22b73f83659525813caeec48a6e5972d410fa4af115bc"
-
-      def install
-        bin.install "rbac-lookup"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.9.1/rbac-lookup_0.9.1_Linux_arm64.tar.gz"
-      sha256 "503fa0563acf637b5afdad8c074d816567ee3847d8ade2549cc39008283770c4"
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.10.0/rbac-lookup_0.10.0_Linux_armv6.tar.gz"
+      sha256 "d106fc73b6875941e434609f03772573de746232a80fc8a884b11011e7aa5ba2"
 
       def install
         bin.install "rbac-lookup"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.9.1/rbac-lookup_0.9.1_Linux_x86_64.tar.gz"
-      sha256 "1ba62f24aa446fb6775d1bd8f6080916a9e8c328ca8c2a9e7b7a85468766b025"
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.10.0/rbac-lookup_0.10.0_Linux_x86_64.tar.gz"
+      sha256 "857903fe100b578e9af968fc876d90c34403884a1404aceab266288d7c81b316"
+
+      def install
+        bin.install "rbac-lookup"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.10.0/rbac-lookup_0.10.0_Linux_arm64.tar.gz"
+      sha256 "204fb2cdd3abda245bb9258d4275ae4227c9557c023b233902f2a0076fff4429"
 
       def install
         bin.install "rbac-lookup"
