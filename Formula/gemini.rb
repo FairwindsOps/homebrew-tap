@@ -5,20 +5,20 @@
 class Gemini < Formula
   desc "Open Source Best Practices for Kubernetes"
   homepage ""
-  version "2.0.0"
+  version "2.0.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.0/gemini_darwin_arm64.tar.gz"
-      sha256 "496a2ff02ecc5692fd08e0ff26b6d67a55ea68be68e1e3606ee35df78c6a17c2"
+    if Hardware::CPU.intel?
+      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.1/gemini_darwin_amd64.tar.gz"
+      sha256 "4d6878f8cfa4f9a5a9d066f740a8a473be486f45eaa0e4918b81bfb0861eb03e"
 
       def install
         bin.install "gemini"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.0/gemini_darwin_amd64.tar.gz"
-      sha256 "48a64b2c201d271de63618f65cbd1892dbd4af8dce688beca29e38d6008ba7b1"
+    if Hardware::CPU.arm?
+      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.1/gemini_darwin_arm64.tar.gz"
+      sha256 "76b3bb32dc44d80492dcf4a01708013e823a83a45cc80b9177b210cb86d242f6"
 
       def install
         bin.install "gemini"
@@ -27,25 +27,25 @@ class Gemini < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.0/gemini_linux_amd64.tar.gz"
-      sha256 "d7075482d2565c93023dd95f5f5351ff569932e0331aece167ac0f2a04b2f8e5"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.1/gemini_linux_armv6.tar.gz"
+      sha256 "252add8d4ee7f3a1990519516ec45791af692e9eb9f173ba7b664626c827a14c"
 
       def install
         bin.install "gemini"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.0/gemini_linux_armv6.tar.gz"
-      sha256 "cf3e7780653b6d7983d245da9f035baf7b44cca5ef3e773c16959fd137eca51c"
+    if Hardware::CPU.intel?
+      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.1/gemini_linux_amd64.tar.gz"
+      sha256 "7df9736ccaefb74b89c39c8f730afb38ff63d5a6ae5fdfddfb49ac34f5f0adfb"
 
       def install
         bin.install "gemini"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.0/gemini_linux_arm64.tar.gz"
-      sha256 "87a59e5cb5930cece736d37f08fe99df0aad8ad6190ca9649e660659514e60db"
+      url "https://github.com/FairwindsOps/gemini/releases/download/2.0.1/gemini_linux_arm64.tar.gz"
+      sha256 "c253e3535f75782df8f8d044b46a3307490bd33c372e6e89d7673de3560aae38"
 
       def install
         bin.install "gemini"
