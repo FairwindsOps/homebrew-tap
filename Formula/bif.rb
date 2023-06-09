@@ -5,20 +5,20 @@
 class Bif < Formula
   desc "Detect deprecated Kubernetes apiVersions"
   homepage ""
-  version "0.0.9"
+  version "0.0.10"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.9/bif_0.0.9_darwin_amd64.tar.gz"
-      sha256 "82d563e89e2caabb81d0d526017453906aee80d0e030660497e11e92ab66856e"
+      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.10/bif_0.0.10_darwin_amd64.tar.gz"
+      sha256 "3ee9a6d9071427964382e58af5670a5cee9fda2d7f287b1bcd5281f3ee412fe1"
 
       def install
         bin.install "bif"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.9/bif_0.0.9_darwin_arm64.tar.gz"
-      sha256 "4f2bdbd9a121524b902db6da8acac5596d1b73f95acc6c57115ce2f0c15c8d92"
+      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.10/bif_0.0.10_darwin_arm64.tar.gz"
+      sha256 "8f8381be2568912374cf7b29f4a61f5a58a5dce9ece1f902673ecb1a81451a72"
 
       def install
         bin.install "bif"
@@ -27,25 +27,25 @@ class Bif < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.9/bif_0.0.9_linux_arm64.tar.gz"
-      sha256 "75d101a3bb343ea4ddded2cafd03856a77229567d7633689f6decda6a07c5010"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.10/bif_0.0.10_linux_armv6.tar.gz"
+      sha256 "7c887360617084cdf3d29b3a0c08453ec913dc48d8c7c499b1dab68430b9e285"
 
       def install
         bin.install "bif"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.9/bif_0.0.9_linux_armv6.tar.gz"
-      sha256 "15b8451a64fcc9a9e8b341b64c5856c926e557999f04033142a8ee1d90d6c8f8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.10/bif_0.0.10_linux_arm64.tar.gz"
+      sha256 "423993438229c0605cf2ff29f856259152c7a805b3f0287516086c63137e36b1"
 
       def install
         bin.install "bif"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.9/bif_0.0.9_linux_amd64.tar.gz"
-      sha256 "e6b78a6b74712d22f19ddb590b8bd2733039aed6205295f08fae9a40a5404f7b"
+      url "https://github.com/FairwindsOps/bif/releases/download/v0.0.10/bif_0.0.10_linux_amd64.tar.gz"
+      sha256 "3f0b037dc15ea3efa68f2ef8c74efc4c0449558cbc9fed266589c96f62cbbbd5"
 
       def install
         bin.install "bif"
