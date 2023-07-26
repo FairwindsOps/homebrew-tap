@@ -5,20 +5,20 @@
 class VaultTokenInjector < Formula
   desc "Detect deprecated Kubernetes apiVersions"
   homepage ""
-  version "1.9.0"
+  version "1.9.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.0/vault-token-injector_1.9.0_darwin_arm64.tar.gz"
-      sha256 "53de2eca000fe6027dcaadb5883120c6738d11a75fe6eb44cc1afd1860b024f3"
+      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.1/vault-token-injector_1.9.1_darwin_arm64.tar.gz"
+      sha256 "154aeb416f6611e9afe199ac958dfc48f30373f351a2346512644992a9218651"
 
       def install
         bin.install "vault-token-injector"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.0/vault-token-injector_1.9.0_darwin_amd64.tar.gz"
-      sha256 "eaed013481eb6f00f8f0a193d6ea711ee69ff09fd007cad0df03b4cb28f1ff65"
+      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.1/vault-token-injector_1.9.1_darwin_amd64.tar.gz"
+      sha256 "7c1a3b62569c4069b3fe6b6b9bd8a5f6a92d0bca498dce0e3b403ebab90dcd4c"
 
       def install
         bin.install "vault-token-injector"
@@ -27,25 +27,25 @@ class VaultTokenInjector < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.0/vault-token-injector_1.9.0_linux_arm64.tar.gz"
-      sha256 "e490ecdeac8732e6d2024c42289b716a6068a7650af8a9a40601f1ed9f3868c7"
+    if Hardware::CPU.intel?
+      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.1/vault-token-injector_1.9.1_linux_amd64.tar.gz"
+      sha256 "db399173759000c3cef6606f5f228627e47ac39d4777c8ce844eab4fd6c5962b"
 
       def install
         bin.install "vault-token-injector"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.0/vault-token-injector_1.9.0_linux_armv6.tar.gz"
-      sha256 "b216d79ba2cdfe78f2ca4dbbef10f12403fee8690d62cf9bbc3e4915d4c03f8b"
+      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.1/vault-token-injector_1.9.1_linux_armv6.tar.gz"
+      sha256 "418768ed6c1d18d236de50cb59848a15fcd99695730a5bd8f3cffd79de0d75aa"
 
       def install
         bin.install "vault-token-injector"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.0/vault-token-injector_1.9.0_linux_amd64.tar.gz"
-      sha256 "dbf75666a85e7395f8144f64852d7c51badda4997951499b482194253ea28174"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/vault-token-injector/releases/download/v1.9.1/vault-token-injector_1.9.1_linux_arm64.tar.gz"
+      sha256 "6167486d69d6dbf8b48f66561785a346556dcf14cb220afa92060b7fe3cee243"
 
       def install
         bin.install "vault-token-injector"
