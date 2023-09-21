@@ -5,20 +5,20 @@
 class Gonogo < Formula
   desc "Check cluster addons for upgrade confidence"
   homepage ""
-  version "0.2.6"
+  version "0.3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.6/gonogo_0.2.6_darwin_arm64.tar.gz"
-      sha256 "e60270c8b0e0b33db1d60815ead11a1032758bea52a20d8dd4764fa08ea918b8"
+    if Hardware::CPU.intel?
+      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.3.0/gonogo_0.3.0_darwin_amd64.tar.gz"
+      sha256 "fb162a3a3eac05aa5545d687211a55f9378e3884d86a1a6cdee08cb7a5365535"
 
       def install
         bin.install "gonogo"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.6/gonogo_0.2.6_darwin_amd64.tar.gz"
-      sha256 "0be72dda36db6765378eedcb22d736918e089b4614a052de656c9924fc0d3d30"
+    if Hardware::CPU.arm?
+      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.3.0/gonogo_0.3.0_darwin_arm64.tar.gz"
+      sha256 "0c153028ba35b4a8b8ec72be9ad7dec16594cc98588070b2b2ed959c705279da"
 
       def install
         bin.install "gonogo"
@@ -28,24 +28,24 @@ class Gonogo < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.6/gonogo_0.2.6_linux_armv6.tar.gz"
-      sha256 "2e3349fd9e195ff7378a0d93b099398fca06ae38d1582eaab7b02427d474f9c6"
+      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.3.0/gonogo_0.3.0_linux_armv6.tar.gz"
+      sha256 "c61272b9b39a4c47be670b18590da9cf7616c4c141678c80cb3c3a7fbda224c5"
 
       def install
         bin.install "gonogo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.6/gonogo_0.2.6_linux_arm64.tar.gz"
-      sha256 "5d6f0a222f487085183ed2e54ce0bc3a5541e67860f21fea364be50a6142b863"
+      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.3.0/gonogo_0.3.0_linux_arm64.tar.gz"
+      sha256 "9116b1a9edd54232926064bc835b1b305924e00a468b4f191962970d791a7c0f"
 
       def install
         bin.install "gonogo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.2.6/gonogo_0.2.6_linux_amd64.tar.gz"
-      sha256 "90adc1c324156e29919f1a50c5e7d414cdcac694ca2e46a1033efd2b62cc74a7"
+      url "https://github.com/FairwindsOps/gonogo/releases/download/v0.3.0/gonogo_0.3.0_linux_amd64.tar.gz"
+      sha256 "326f4bd6105664da5e06398578cc38b16d4acf4cd18677868991de8f808a6cca"
 
       def install
         bin.install "gonogo"
