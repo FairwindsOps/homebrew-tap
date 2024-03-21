@@ -5,20 +5,20 @@
 class Nova < Formula
   desc "Check installed Helm charts for updates"
   homepage ""
-  version "3.7.0"
+  version "3.8.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/nova/releases/download/v3.7.0/nova_3.7.0_darwin_amd64.tar.gz"
-      sha256 "eb9c2ebf7abdce0a821a390d92687f05ca2d4627836e4d27b334c0cb4375ebaa"
+    if Hardware::CPU.arm?
+      url "https://github.com/FairwindsOps/nova/releases/download/v3.8.0/nova_3.8.0_darwin_arm64.tar.gz"
+      sha256 "427afa34c2ad16eb8450393ec6cf0e5f68381733aa2c7bed4bb54cce92bd0475"
 
       def install
         bin.install "nova"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/nova/releases/download/v3.7.0/nova_3.7.0_darwin_arm64.tar.gz"
-      sha256 "032dea250e6eeac2173dd66e87e7a1f8b5ae328ea65177b89a6800f858838654"
+    if Hardware::CPU.intel?
+      url "https://github.com/FairwindsOps/nova/releases/download/v3.8.0/nova_3.8.0_darwin_amd64.tar.gz"
+      sha256 "bf5d64f79f5dde903cb28c2c336a88ea65304939c7f41b0b6d9b6b685502e416"
 
       def install
         bin.install "nova"
@@ -27,25 +27,25 @@ class Nova < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/nova/releases/download/v3.7.0/nova_3.7.0_linux_armv6.tar.gz"
-      sha256 "60fecd5d7da8b50d64f0f57c67cfdc2cfa8e2e4ab5e4d21c45e241791c7a80b0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/nova/releases/download/v3.8.0/nova_3.8.0_linux_arm64.tar.gz"
+      sha256 "3dab15d013261823e78fc56125405db56a8e39bdf8185724bf30a6c7b769d3d7"
 
       def install
         bin.install "nova"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/nova/releases/download/v3.7.0/nova_3.7.0_linux_arm64.tar.gz"
-      sha256 "b2d8b847f0dcacd178179c3b67408839a789160953c42fcaa47bd8bc3baceb72"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/nova/releases/download/v3.8.0/nova_3.8.0_linux_armv6.tar.gz"
+      sha256 "2738579a6681f958736a68415d2de372ac2ef7d9fdf93ae024a9bd4fb66b31f5"
 
       def install
         bin.install "nova"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/nova/releases/download/v3.7.0/nova_3.7.0_linux_amd64.tar.gz"
-      sha256 "15349741133e796cdef908a5f5513f6a87c73c67ec6ddb358037eb39384b12e9"
+      url "https://github.com/FairwindsOps/nova/releases/download/v3.8.0/nova_3.8.0_linux_amd64.tar.gz"
+      sha256 "bdbbfb1fe1ac470c837b382681a10542032bb064e2628f528d65384656d727b9"
 
       def install
         bin.install "nova"
