@@ -5,20 +5,20 @@
 class Insights < Formula
   desc "Command Line utility for Fairwinds Insights"
   homepage ""
-  version "2.1.2"
+  version "2.3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.1.2/insights-cli_2.1.2_darwin_arm64.tar.gz"
-      sha256 "8120ee59bfda6796cf5e92a114ca485d3f54579a70d4a600ceb11dfcbd2f23e2"
+    on_intel do
+      url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.3.0/insights-cli_2.3.0_darwin_amd64.tar.gz"
+      sha256 "2b6a5b941dd8449498bcd2e914c95d52e47628facf989b9525ac943070171804"
 
       def install
         bin.install "insights-cli"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.1.2/insights-cli_2.1.2_darwin_amd64.tar.gz"
-      sha256 "215d1b9d42f35a3d0433b96c2cefc0a2e0647141c9cd3a8ff830ed704ec8d541"
+    on_arm do
+      url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.3.0/insights-cli_2.3.0_darwin_arm64.tar.gz"
+      sha256 "cdd57991e750245201e415aa106865d996e30e050d183031391c9e6c26ebd8bb"
 
       def install
         bin.install "insights-cli"
@@ -27,28 +27,34 @@ class Insights < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.1.2/insights-cli_2.1.2_linux_armv6.tar.gz"
-      sha256 "b706a241721fe134af2725b80c51bdc631be9d51f6ac5598603101010dee41b3"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.3.0/insights-cli_2.3.0_linux_amd64.tar.gz"
+        sha256 "cce3739c0e5f5377d4549c98c89943eacdbb9fd1f6fc96ce2aa5e1860408c952"
 
-      def install
-        bin.install "insights-cli"
+        def install
+          bin.install "insights-cli"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.1.2/insights-cli_2.1.2_linux_arm64.tar.gz"
-      sha256 "9e8f380288a3ed4f6552d85652aaa94abc053c598bd3f84a6d99bf96b939c8a4"
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.3.0/insights-cli_2.3.0_linux_armv6.tar.gz"
+        sha256 "88b836e1367cd4ea7c206d113fdb4c85e0592f221e9f9f8332a9b0a9fb3ef043"
 
-      def install
-        bin.install "insights-cli"
+        def install
+          bin.install "insights-cli"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.1.2/insights-cli_2.1.2_linux_amd64.tar.gz"
-      sha256 "fab752d39ef1108c436c5f48b5524477a7ddb6abf47f64368d508894a9ed2859"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/FairwindsOps/insights-cli/releases/download/v2.3.0/insights-cli_2.3.0_linux_arm64.tar.gz"
+        sha256 "b32905a6ca0ac7370a79698fcf5d702d65b4243ce80c881c25b96171fa8e3257"
 
-      def install
-        bin.install "insights-cli"
+        def install
+          bin.install "insights-cli"
+        end
       end
     end
   end
