@@ -5,20 +5,20 @@
 class Polaris < Formula
   desc "Open Source Best Practices for Kubernetes"
   homepage ""
-  version "9.6.3"
+  version "9.6.4"
 
   on_macos do
-    on_intel do
-      url "https://github.com/FairwindsOps/polaris/releases/download/9.6.3/polaris_darwin_amd64.tar.gz"
-      sha256 "d7d64fcd4f018f21dc139d567e668c184efb756bde82c2318594e230b18bd60e"
+    if Hardware::CPU.intel?
+      url "https://github.com/FairwindsOps/polaris/releases/download/9.6.4/polaris_darwin_amd64.tar.gz"
+      sha256 "a25048a73f0d8dfd7e881312857eee8dc2fc8cf9d1db87a6349cf72cea216b22"
 
       def install
         bin.install "polaris"
       end
     end
-    on_arm do
-      url "https://github.com/FairwindsOps/polaris/releases/download/9.6.3/polaris_darwin_arm64.tar.gz"
-      sha256 "969097fa531db00e9d3b1112c5346c314d6601cc53447ffd700eda81be680cbb"
+    if Hardware::CPU.arm?
+      url "https://github.com/FairwindsOps/polaris/releases/download/9.6.4/polaris_darwin_arm64.tar.gz"
+      sha256 "336667992180ecfefcbc49d3284c538a8fb6f26ed7e3733fb5e859ce87ae1b7b"
 
       def install
         bin.install "polaris"
@@ -27,34 +27,25 @@ class Polaris < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/FairwindsOps/polaris/releases/download/9.6.3/polaris_linux_amd64.tar.gz"
-        sha256 "c308204e68b4faae3905d4168f58454481dfc104c68e0f1403f690e83356ea27"
-
-        def install
-          bin.install "polaris"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/polaris/releases/download/9.6.4/polaris_linux_amd64.tar.gz"
+      sha256 "d6b1997b7d96383e9f86cc826f94b5555485bef8cbf38cd4acee8f3c3607c36e"
+      def install
+        bin.install "polaris"
       end
     end
-    on_arm do
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/FairwindsOps/polaris/releases/download/9.6.3/polaris_linux_armv6.tar.gz"
-        sha256 "eadd2d4ec17027f8883621df3b4f7caee379242ce411aa875f467611a13bba79"
-
-        def install
-          bin.install "polaris"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/polaris/releases/download/9.6.4/polaris_linux_armv6.tar.gz"
+      sha256 "0e05a0c5a47aafeaacd062e8d0174ec25e62a1735190e69c563c5bbb9fa84e05"
+      def install
+        bin.install "polaris"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/FairwindsOps/polaris/releases/download/9.6.3/polaris_linux_arm64.tar.gz"
-        sha256 "62cf2ef2ac8253d29ccd9656c555e6c967f0ef5f923e2352dba9ab9d78c4f2d1"
-
-        def install
-          bin.install "polaris"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/FairwindsOps/polaris/releases/download/9.6.4/polaris_linux_arm64.tar.gz"
+      sha256 "3fe6ae6687b998bd2739c1cbf2f8ea9d138c0c259517462a663e951f46242f4a"
+      def install
+        bin.install "polaris"
       end
     end
   end
