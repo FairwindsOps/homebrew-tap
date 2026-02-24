@@ -5,22 +5,22 @@
 class HelmReleasePruner < Formula
   desc "Automatically delete old Helm releases"
   homepage ""
-  version "4.0.5"
+  version "4.0.6"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.5/helm-release-pruner_4.0.5_darwin_amd64.tar.gz"
-      sha256 "ff042e9504d9c1af7268bdf6af820dad630df72ed8df573524b6e0e8b333f348"
+      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.6/helm-release-pruner_4.0.6_darwin_amd64.tar.gz"
+      sha256 "871e586dc8fa2c1774762b5fd48f0485061f4501dc6282e68f590967540a6f25"
 
-      def install
+      define_method(:install) do
         bin.install "helm-release-pruner"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.5/helm-release-pruner_4.0.5_darwin_arm64.tar.gz"
-      sha256 "842f2736b02b62fd3d7963783df2e7fcad84e72e2371a91a1982501c13ee73c1"
+      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.6/helm-release-pruner_4.0.6_darwin_arm64.tar.gz"
+      sha256 "35ebdb828570f86fa5ada8dbbcc08660e87d227ea00fb3d043178dcc7f5fcdea"
 
-      def install
+      define_method(:install) do
         bin.install "helm-release-pruner"
       end
     end
@@ -28,23 +28,23 @@ class HelmReleasePruner < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.5/helm-release-pruner_4.0.5_linux_amd64.tar.gz"
-      sha256 "bd9fc403ee5c2e60b15d4a40ac66190f06625d7c58adf7a058556832fdcb89af"
-      def install
+      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.6/helm-release-pruner_4.0.6_linux_amd64.tar.gz"
+      sha256 "8f4fc5c75b2b2fee2727be039af23084b092d42e692ce1b0c6478bb1262c0d1b"
+      define_method(:install) do
         bin.install "helm-release-pruner"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.5/helm-release-pruner_4.0.5_linux_armv6.tar.gz"
-      sha256 "f56fd2511f151ece6c616af5c3c1d64556f5e584c830f71325a23b41aad73cbb"
-      def install
+      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.6/helm-release-pruner_4.0.6_linux_armv6.tar.gz"
+      sha256 "a7e9b1d6321630d042c33fbba3d48399705b0f34194404d5c9bfd34d8281ce82"
+      define_method(:install) do
         bin.install "helm-release-pruner"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.5/helm-release-pruner_4.0.5_linux_arm64.tar.gz"
-      sha256 "2e29c317f968a0c11f8e9285d83bcbe14a4e0371c293727429d69db544271728"
-      def install
+      url "https://github.com/FairwindsOps/helm-release-pruner/releases/download/v4.0.6/helm-release-pruner_4.0.6_linux_arm64.tar.gz"
+      sha256 "0429180b91bbf08edafa0dea6babcbb999e5a774f4809b793444304ad1e23b91"
+      define_method(:install) do
         bin.install "helm-release-pruner"
       end
     end
