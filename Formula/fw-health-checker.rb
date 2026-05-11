@@ -5,20 +5,20 @@
 class FwHealthChecker < Formula
   desc "Monitor client AWS account health"
   homepage ""
-  version "0.0.8"
+  version "0.0.9"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.8/fw-health-checker_0.0.8_darwin_amd64.tar.gz"
-      sha256 "cec2f622f6ad1593b8b5cfb6b4628eaaa3a0e490b3dd114f3b93404424f5bab4"
+      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.9/fw-health-checker_0.0.9_darwin_amd64.tar.gz"
+      sha256 "9649f0573b06e34e17844627824fad3d81ba5e47755f73cdf3eba450c666c1a7"
 
       define_method(:install) do
         bin.install "fw-health-checker"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.8/fw-health-checker_0.0.8_darwin_arm64.tar.gz"
-      sha256 "f1d5c5e72b877458c4f814dd17ffd426200011dfa98e3276cfcf26ab7f957485"
+      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.9/fw-health-checker_0.0.9_darwin_arm64.tar.gz"
+      sha256 "ffe6d63aa3c638dfce198e2cb7a5739598cd16356863fc91128d1c657454a640"
 
       define_method(:install) do
         bin.install "fw-health-checker"
@@ -28,22 +28,22 @@ class FwHealthChecker < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.8/fw-health-checker_0.0.8_linux_amd64.tar.gz"
-      sha256 "875359f2d8d7197847c80c72695f0aa864e9b3866c83bdd6adb8d26a7f338e4c"
+      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.9/fw-health-checker_0.0.9_linux_amd64.tar.gz"
+      sha256 "1549ef4d36259fb5dc7018b36b0e2fdeb173339d8e6d8d7628f548a38db7c1eb"
       define_method(:install) do
         bin.install "fw-health-checker"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.8/fw-health-checker_0.0.8_linux_armv6.tar.gz"
-      sha256 "c283692272856095f6dc719fd873b419c7f4a9482a61833198796eed40ef20e1"
+      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.9/fw-health-checker_0.0.9_linux_armv6.tar.gz"
+      sha256 "60d6002705aef16bdb247c80c1f26a7f197fb2af1b17adf63770d56e61c6010b"
       define_method(:install) do
         bin.install "fw-health-checker"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.8/fw-health-checker_0.0.8_linux_arm64.tar.gz"
-      sha256 "21733fb563a0dab8ee1ca3a0aa1c7cb6f49ceb33d5b84c9f20676aa60f57aa11"
+      url "https://github.com/FairwindsOps/fw-health-checker/releases/download/v0.0.9/fw-health-checker_0.0.9_linux_arm64.tar.gz"
+      sha256 "300a4d9e76bc6cdaa335d9cf38651224405e7b7226bc58a19e85277ba2441d63"
       define_method(:install) do
         bin.install "fw-health-checker"
       end
