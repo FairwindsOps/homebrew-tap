@@ -5,20 +5,20 @@
 class RbacManager < Formula
   desc "Kubernetes RBAC automation controller"
   homepage ""
-  version "1.10.1"
+  version "1.10.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.1/rbac-manager_1.10.1_darwin_amd64.tar.gz"
-      sha256 "b13dd96c3d0dbf22ea2fc527059d2a97125b5cda1cc82259b8986ee06afca86b"
+      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.2/rbac-manager_1.10.2_darwin_amd64.tar.gz"
+      sha256 "7c7b7dafa9fd29704e271c6fbb7ea846837352664f404270e4c28c5737df7b4d"
 
       define_method(:install) do
         bin.install "rbac-manager"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.1/rbac-manager_1.10.1_darwin_arm64.tar.gz"
-      sha256 "c86652dec272963dc177d4511b147fe96de27a242d0752cb6a1a8533ff512374"
+      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.2/rbac-manager_1.10.2_darwin_arm64.tar.gz"
+      sha256 "c456d039a4d65e6d22abd061a889408a554636e2db4adccfb3c240257c2a65ec"
 
       define_method(:install) do
         bin.install "rbac-manager"
@@ -28,22 +28,22 @@ class RbacManager < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.1/rbac-manager_1.10.1_linux_amd64.tar.gz"
-      sha256 "eb51e7b5d19f871fe2a40ecfd17eef6593a726407a81dc27a3407bb4bd2e86e3"
+      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.2/rbac-manager_1.10.2_linux_amd64.tar.gz"
+      sha256 "280114685efe2d6148fa22c1fc47751a36b8af72bb6890b802c9f612017edfb3"
       define_method(:install) do
         bin.install "rbac-manager"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.1/rbac-manager_1.10.1_linux_armv6.tar.gz"
-      sha256 "8a522a4d42f818c7bcfdc479aa41118d2839e12b9581a76dc9b0682986ee9d9d"
+      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.2/rbac-manager_1.10.2_linux_armv6.tar.gz"
+      sha256 "b772b552a0f4bb178d1fac816a5ec714f17998b99eb87a05dd435c005830a9a6"
       define_method(:install) do
         bin.install "rbac-manager"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.1/rbac-manager_1.10.1_linux_arm64.tar.gz"
-      sha256 "de8190d08b1e68e2218dc8118af74ae247154dba113b32dc303f6232840ac6fa"
+      url "https://github.com/FairwindsOps/rbac-manager/releases/download/v1.10.2/rbac-manager_1.10.2_linux_arm64.tar.gz"
+      sha256 "c3b976f25a03f340854c3ceb00ae6bfb1ce06afed4feb23f42b23b50034463d2"
       define_method(:install) do
         bin.install "rbac-manager"
       end
