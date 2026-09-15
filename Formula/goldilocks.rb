@@ -5,20 +5,20 @@
 class Goldilocks < Formula
   desc "Kubernetes workload resource usage analysis"
   homepage ""
-  version "4.16.1"
+  version "4.16.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.1/goldilocks_4.16.1_darwin_amd64.tar.gz"
-      sha256 "8e6b9f9be9ef9b49e5668b654d98b4f564c8c1ddc627cab22b712cf285ffd1ee"
+      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.2/goldilocks_4.16.2_darwin_amd64.tar.gz"
+      sha256 "ccf4d57237bfa74a77bb575e8d408e5d89a350e988217a5eecc790365cec9d9a"
 
       define_method(:install) do
         bin.install "goldilocks"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.1/goldilocks_4.16.1_darwin_arm64.tar.gz"
-      sha256 "12e45ce69fddc7bc924291ea3fc3a7db2aab719171c2976197eff75243d87bb8"
+      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.2/goldilocks_4.16.2_darwin_arm64.tar.gz"
+      sha256 "5ad5dcfa3ed9e1540127c3e8e6c5b31a42871cfe831585c683f69c7475f21aa5"
 
       define_method(:install) do
         bin.install "goldilocks"
@@ -28,22 +28,22 @@ class Goldilocks < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.1/goldilocks_4.16.1_linux_amd64.tar.gz"
-      sha256 "50c4b0a629e58ce80d2d3b38b3afd50f42490beb9f2d59a724659e8c31a08774"
+      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.2/goldilocks_4.16.2_linux_amd64.tar.gz"
+      sha256 "b2599d9c724a9147667e76a7e1d1b600143f55b83855ffdec275f2bf3bb484a7"
       define_method(:install) do
         bin.install "goldilocks"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.1/goldilocks_4.16.1_linux_armv6.tar.gz"
-      sha256 "7e6cce65de00525e69721b9522ee7e42bb3662de45445ed7d168ce04a0f31dd9"
+      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.2/goldilocks_4.16.2_linux_armv6.tar.gz"
+      sha256 "c30e34fc45cf4847b2c88da99493cd3071d29dfbc4720477b2680d4d7cb590fa"
       define_method(:install) do
         bin.install "goldilocks"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.1/goldilocks_4.16.1_linux_arm64.tar.gz"
-      sha256 "27ca43e6358063957cf3027919dbf568f3aa422c360f4b6c1300d8679860704f"
+      url "https://github.com/FairwindsOps/goldilocks/releases/download/v4.16.2/goldilocks_4.16.2_linux_arm64.tar.gz"
+      sha256 "ca9df1d18cdff85f3ea242df93f3905cc9d0a4d381ba820620fdf2939f705c10"
       define_method(:install) do
         bin.install "goldilocks"
       end
