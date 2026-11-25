@@ -5,20 +5,20 @@
 class Saffire < Formula
   desc "Kubernetes AlternateImageSource controller"
   homepage ""
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.0/saffire_0.1.0_darwin_amd64.tar.gz"
-      sha256 "f9e0cc77969c226481b14c9c34b651d4bb377a98dc9c1de147ce037573ac6ecf"
+      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.1/saffire_0.1.1_darwin_amd64.tar.gz"
+      sha256 "893b3fd86d78c6439e7fe97c94035c2c146154be2e5c55a1c9ac577cc5ac6475"
 
       define_method(:install) do
         bin.install "saffire"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.0/saffire_0.1.0_darwin_arm64.tar.gz"
-      sha256 "a495e67ad1bce68190905f9d287e70ae4dddb818b2ef63d8725d30eabcd2f1e2"
+      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.1/saffire_0.1.1_darwin_arm64.tar.gz"
+      sha256 "11c8568ddea0a30540c539b96df6283142fde3120dfafa176ab8a043642a0178"
 
       define_method(:install) do
         bin.install "saffire"
@@ -28,22 +28,22 @@ class Saffire < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.0/saffire_0.1.0_linux_amd64.tar.gz"
-      sha256 "efbe473612d6fba5068271a451c06aec1214728e28053b9c793f24d975c12e08"
+      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.1/saffire_0.1.1_linux_amd64.tar.gz"
+      sha256 "f3cb1003a82e963eedf318695d345174eea7c9a1cc5737d39bf921deb867c3e8"
       define_method(:install) do
         bin.install "saffire"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.0/saffire_0.1.0_linux_armv6.tar.gz"
-      sha256 "15968f33e1ef5b813c0213e625b15c2e38e13c18186cf2876d9d88850f5b5855"
+      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.1/saffire_0.1.1_linux_armv6.tar.gz"
+      sha256 "76a0e95be83503b4dcd93cde6613c7e77b79701f5f836ded2a992de4f4088f19"
       define_method(:install) do
         bin.install "saffire"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.0/saffire_0.1.0_linux_arm64.tar.gz"
-      sha256 "28d6fc38898572bad9c7372fcbc5e1c3194871b68b7dd4dc5051a2536a59830e"
+      url "https://github.com/FairwindsOps/saffire/releases/download/v0.1.1/saffire_0.1.1_linux_arm64.tar.gz"
+      sha256 "94b8200d76c35a6908bfc5b4b0ede8c67ca731a60057dbebb20331318ef982a0"
       define_method(:install) do
         bin.install "saffire"
       end
