@@ -5,20 +5,20 @@
 class Reckoner < Formula
   desc "Declarative Helm chart deployment using course files"
   homepage ""
-  version "6.3.0"
+  version "6.3.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.0/reckoner_6.3.0_darwin_amd64.tar.gz"
-      sha256 "4d429b0ecc993f3187079871e6fa4841837930bb18347e5a3c8c97d9c3af33ce"
+      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.1/reckoner_6.3.1_darwin_amd64.tar.gz"
+      sha256 "6b7408cbac66625d2dd0a8d4d612689d04612dabbdf2550dd592358aa88a648f"
 
       define_method(:install) do
         bin.install "reckoner"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.0/reckoner_6.3.0_darwin_arm64.tar.gz"
-      sha256 "5f381902148a37727de8d7bc8f53dd5c9cdbd8533ebfbbf3fe384f22fbd91fd3"
+      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.1/reckoner_6.3.1_darwin_arm64.tar.gz"
+      sha256 "8c82ce4b4ee0a3308ea1d6acfd3e990450ec8229c9c1e566fb91f505bd2c2f33"
 
       define_method(:install) do
         bin.install "reckoner"
@@ -28,22 +28,22 @@ class Reckoner < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.0/reckoner_6.3.0_linux_amd64.tar.gz"
-      sha256 "4cb7d399386b0fcdb5be87b18b6e9d4a787da3e65afb8789542b7f7566e9d2f7"
+      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.1/reckoner_6.3.1_linux_amd64.tar.gz"
+      sha256 "e507637f6c8e052c88ef19567c2b9ca7b5e9dbf05fb40b652804111493bb27da"
       define_method(:install) do
         bin.install "reckoner"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.0/reckoner_6.3.0_linux_armv6.tar.gz"
-      sha256 "d52ce6148022945e18b0dd7faea67a50bf84dd62e8f5f6c153d461cfba6277a4"
+      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.1/reckoner_6.3.1_linux_armv6.tar.gz"
+      sha256 "66421a76dc525d373c636647b7cc708064fd5ce7c6d14aac6790c5a2c5e17d49"
       define_method(:install) do
         bin.install "reckoner"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.0/reckoner_6.3.0_linux_arm64.tar.gz"
-      sha256 "babd406d43a1487a69e1f70805df026abefc2ab6ab87479ae111b698aefc79b0"
+      url "https://github.com/FairwindsOps/reckoner/releases/download/v6.3.1/reckoner_6.3.1_linux_arm64.tar.gz"
+      sha256 "7f17ffea008c321624b4c89ee860ed6bfb5f4e563857405c5717f5d2e21db481"
       define_method(:install) do
         bin.install "reckoner"
       end
